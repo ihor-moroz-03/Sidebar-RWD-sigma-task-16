@@ -1,0 +1,58 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body > * {
+    padding: 0.5em;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    grid-template-rows: min-content auto;
+    grid-template-columns: min-content auto;
+    grid-template-areas:
+        "h h"
+        "m m";
+}
+
+header {
+    background-color: lightgray;
+    grid-area: h;
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+main {
+    grid-area: m;
+}
+
+@media screen and (min-width: 720px) {
+    body {
+        grid-template-areas:
+            "h m"
+            "h m";
+    }
+}
+
+menu {
+    display: flex;
+    flex-direction: column;
+    /* max-block-size: 100px;
+    overflow-x: scroll; */
+}
+
+menu li {
+    display: inline-block;
+    list-style-type: none;
+    padding: 0.2em;
+}
+
+menu li:hover {
+    color: white;
+    text-shadow: 0em 0em 0.2em grey;
+    cursor: pointer;
+}
